@@ -1,0 +1,17 @@
+[
+  {
+    "imageSrc": "https://via.placeholder.com/1920x1080",
+    "title": "Slide 1",
+    "text": "This is the first slide"
+  },
+  {
+    "imageSrc": "https://via.placeholder.com/1920x1080",
+    "title": "Slide 2",
+    "text": "This is the second slide"
+  },
+  {
+    "imageSrc": "https://via.placeholder.com/1920x1080",
+    "title": "Slide 3",
+    "text": "This is the third slide"
+  }
+]
