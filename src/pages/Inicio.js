@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import NavigationBar from '../components/NavigationBar';
 import SliderSection from '../components/SliderSection';
 import CardHorizontal from '../components/CardHorizontal';
-import CardHorizontalReverse from '../components/CardHorizontal';
+import CardHorizontalReverse from '../components/CardHorizontalReverse';
 import itemSlider from "../mock/itemSlider";
 import itemsCard from "../mock/itemsCard.json";
 import aboutMe from "../mock/aboutMe.json";
@@ -23,7 +23,7 @@ function Inicio() {
       {
         itemsCard.map((items) => {
           return (
-            <CardHorizontal className="spacing_top"
+            <CardHorizontal 
               image={items.image}
               title={items.title}
               text={items.text}

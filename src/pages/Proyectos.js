@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container } from "react-bootstrap";
 import NavigationBar from '../components/NavigationBar';
-import CardProyectos from "../components/CardProyectos";
 import itemsCard from "../mock/itemsCard.json";
+import Footer from "../components/Footer";
+import CardHorizontal from '../components/CardHorizontal';
 
 const Proyectos = () => (
 
@@ -10,15 +11,15 @@ const Proyectos = () => (
         <NavigationBar />
         {
         itemsCard.map((items) => {
-            return (           
-              <CardProyectos 
-              imageSrc={items.imageSrc}
+          return (
+            <CardHorizontal 
+              image={items.image}
               title={items.title}
               text={items.text}
-              />   
-            )
-        }
-      )}
+            />
+          )
+        })
+      }
       <Footer />
     </Container>
 )

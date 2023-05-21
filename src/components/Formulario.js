@@ -41,11 +41,10 @@ const Formulario = () => {
     if (nameError || emailError) {
       return;
     }
-
-    // Enviar el formulario
-    console.log("Nombre: ", name);
-    console.log("Correo electrónico: ", email);
-    console.log("Mensaje: ", message);
+    
+    console.log(name);
+    console.log(email);
+    console.log( message);
   };
 
   return (

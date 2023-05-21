@@ -8,4 +8,12 @@
   background-color: #eee;
   box-shadow: 10px 5px 10px 2px rgba(0, 0, 0, 0.3);
   border: none;
+}
+
+.articulo {
+  width: 600px;
+}
+
+.articulo img {
+  width: 100%;
 }/*# sourceMappingURL=Card.css.map */

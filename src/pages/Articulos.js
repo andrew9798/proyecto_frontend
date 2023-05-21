@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
-import CardProyectos from "../components/CardProyectos";
 import NavigationBar from "../components/NavigationBar";
 import itemsCard from "../mock/itemsCard.json";
 import getArticulos from "../assets/js/axios/articulos";
+import Footer from "../components/Footer";
+import CardHorizontal from "../components/CardHorizontal";
 
 
 const Articulos = () => {
@@ -18,7 +19,7 @@ const Articulos = () => {
         {
         itemsCard.map((data) => {
             return (           
-              <CardProyectos 
+              <CardHorizontal 
               imageSrc={data.imagen}
               title={data.titulo}
               text={data.cuerpo}
