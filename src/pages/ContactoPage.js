@@ -8,6 +8,7 @@ const Contacto = () => (
     <Container fluid>
         <NavigationBar />
         <Formulario />
+        <Footer />
     </Container>
 )
 

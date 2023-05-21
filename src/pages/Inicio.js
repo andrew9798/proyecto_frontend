@@ -6,11 +6,14 @@ import CardHorizontal from '../components/CardHorizontal';
 import CardHorizontalReverse from '../components/CardHorizontal';
 import itemSlider from "../mock/itemSlider";
 import itemsCard from "../mock/itemsCard.json";
-
+import aboutMe from "../mock/aboutMe.json";
+import Footer from "../components/Footer";
+import '../assets/css/card.css'
+import '../assets/css/styles.css'
 
 function Inicio() {
   return (
-    <Container fluid>
+    <Container  fluid>
       <NavigationBar />
       <SliderSection items={itemSlider}
         imageSrc={itemSlider.imageSrc}
@@ -19,28 +22,22 @@ function Inicio() {
       />
       {
         itemsCard.map((items) => {
-          let iteracion=1
-          iteracion++
-          if (iteracion%2==0){
-            return (           
-              <CardHorizontal 
-              imageSrc={items.imageSrc}
+          return (
+            <CardHorizontal className="spacing_top"
+              image={items.image}
               title={items.title}
               text={items.text}
-              />   
-            )
-          }
-          else{
-            return (           
-              <CardHorizontalReverse
-              imageSrc={items.imageSrc}
-              title={items.title}
-              text={items.text}
-              />
-            )
-          }  
-        }
-      )}
+            />
+          )
+        })
+      }
+
+      <CardHorizontalReverse items={aboutMe}
+          image={aboutMe.image}
+          title={aboutMe.title}
+          text={aboutMe.text}
+      />
+      <Footer />
     </Container>
   );
 }
