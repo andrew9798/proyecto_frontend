@@ -1,4 +1,4 @@
-import Card from 'react-bootstrap/Card';
+import { Card, Button } from "react-bootstrap";
 
 function articulos({ image, title }) {
   return (
@@ -14,4 +14,4 @@ function articulos({ image, title }) {
   );
 }
 
-export default ImageAndTextExample;
+export default articulos;
