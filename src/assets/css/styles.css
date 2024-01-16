@@ -5,4 +5,9 @@
 
 .spacing_top {
   margin-top: 75px;
-}/*# sourceMappingURL=Styles.css.map */
+}
+
+.custom-link-button a:not(.btn) {
+  color: inherit; /* o el color que desees */
+  text-decoration: none;
+}/*# sourceMappingURL=styles.css.map */

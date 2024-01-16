@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import '../assets/css/styles.css'
 import { Link } from 'react-router-dom';
 
-const CardHorizontal = ({ image, title, text, id }) => {
+const CardComentario = ({ image, title, text, id }) => {
   return (
     <Card className="mb-3 card spacing_top">
       <div className="row no-gutters">
@@ -14,7 +14,7 @@ const CardHorizontal = ({ image, title, text, id }) => {
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>{text}</Card.Text>
-            <Button variant="primary"> <Link to={`/articulos/${id}`}>Saber más</Link></Button>
+            <Button variant="primary"> <Link to={`/articulos/${id}`}>Eliminar Mensaje</Link></Button>
           </Card.Body>
         </div>
       </div>
@@ -22,4 +22,4 @@ const CardHorizontal = ({ image, title, text, id }) => {
   );
 };
 
-export default CardHorizontal;
+export default CardComentario;

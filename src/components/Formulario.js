@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import "../assets/css/formulario.css"
 
 const Formulario = () => {
   const [name, setName] = useState("");
@@ -48,9 +49,9 @@ const Formulario = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form className="formulario" onSubmit={handleSubmit}>
       <Form.Group controlId="formBasicName">
-        <Form.Label>Nombre</Form.Label>
+        <Form.Label className="campoFormulario">Nombre</Form.Label>
         <Form.Control
           type="text"
           placeholder="Ingrese su nombre"
@@ -64,7 +65,7 @@ const Formulario = () => {
       </Form.Group>
 
       <Form.Group controlId="formBasicEmail">
-        <Form.Label>Correo electrónico</Form.Label>
+        <Form.Label className="campoFormulario">Correo electrónico</Form.Label>
         <Form.Control
           type="email"
           placeholder="Ingrese su correo electrónico"
@@ -78,7 +79,7 @@ const Formulario = () => {
       </Form.Group>
 
       <Form.Group controlId="formBasicMessage">
-        <Form.Label>Mensaje</Form.Label>
+        <Form.Label className="campoFormulario">Mensaje</Form.Label>
         <Form.Control
           as="textarea"
           rows={3}
@@ -88,7 +89,7 @@ const Formulario = () => {
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button className="boton" variant="primary" type="submit">
         Enviar
       </Button>
     </Form>

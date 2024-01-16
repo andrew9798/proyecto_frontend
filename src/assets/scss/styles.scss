@@ -7,3 +7,8 @@
     margin-top: 75px;   
 }
 
+.custom-link-button a:not(.btn) {
+    color: inherit; /* o el color que desees */
+    text-decoration: none;
+  }
+
