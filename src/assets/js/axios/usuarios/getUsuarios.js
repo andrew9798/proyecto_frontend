@@ -1,9 +1,10 @@
 import axios from "axios";
+import { URL } from "../../utils"
 
-export const getComentarios = async () => {
+export const getUsuarios = async () => {
   try {
     const peticion = await axios.get(
-      "http://localhost:3500/api/v1/usuarios",
+      `${URL}/usuarios`,
       { withCredentials: true, mode: "cors" }
     );
     return peticion.data;

@@ -9,7 +9,7 @@ const CardHorizontalReverse = ({ image, title, text }) => {
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>{text}</Card.Text>
-            <Button variant="primary">Saber más</Button>
+            <Button variant="primary boton">Saber más</Button>
           </Card.Body>
         </div>
         <div className="col-md-4">

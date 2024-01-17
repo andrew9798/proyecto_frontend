@@ -7,8 +7,8 @@ import itemSlider from "../mock/itemSlider";
 import itemsCard from "../mock/itemsCard.json";
 import '../assets/css/card.css'
 import '../assets/css/styles.css'
-const funcionalidades= [ "articulos", "comentarios", "usuarios", "proyectos" ];
-
+import { UrlFront } from "../assets/js/utils";
+import { funcionalidades } from "../assets/js/utils"
 
 function Inicio() {
   return (
@@ -17,7 +17,7 @@ function Inicio() {
       <h2>Panel de Administración</h2>
       {
         funcionalidades.map((item) => (
-          <CardAdminstracion text={item}  to= {`/ruta/${item}`} />
+          <CardAdminstracion text={item}  to= {`${UrlFront}/administracionPanel/${item}`} />
         ))
       }
     </Container> 

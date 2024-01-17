@@ -14,7 +14,7 @@ const CardHorizontal = ({ image, title, text, id }) => {
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>{text}</Card.Text>
-            <Button variant="primary"> <Link to={`/articulos/${id}`}>Saber más</Link></Button>
+            <Button variant="primary" className="custom-link-button boton"> <Link to={`/articulos/${id}`}>Saber más</Link></Button>
           </Card.Body>
         </div>
       </div>

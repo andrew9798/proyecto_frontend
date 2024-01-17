@@ -6,4 +6,8 @@ export const obtIdDesdePath = () => {
     return id;
   };
 
-export const URL = "https://localhost:3000/api/v1";
+export const URL = "http://localhost:3500/api/v1";
+
+export const UrlFront = "http://localhost:3000";
+
+export const funcionalidades = [ "articulos", "comentarios", "usuarios", "proyectos" ];
