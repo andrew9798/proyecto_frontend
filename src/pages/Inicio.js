@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 import '../assets/css/card.css'
 import '../assets/css/styles.css'
 
-function Inicio() {
+function Inicio() {                                                                                 
   return (
     <Container  fluid>
       <NavigationBar />
