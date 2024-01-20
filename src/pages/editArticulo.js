@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
-import { editArticulo } from '../assets/js/axios/articulos/editArticulo'; // Importa la función desde el nuevo archivo
+import React, { useState, useEffect } from 'react';
+import { getArticulo } from '../assets/js/axios/articulos/getArticulo';
+import { editArticulo} from "../assets/js/axios/articulos/editArticulo";
+import { obtIdDesdePath } from '../assets/js/utils';
 
-const ArticulosForm = () => {
+const EditArticulo = () => {
   const [titulo, setTitulo] = useState('');
   const [cuerpo, setCuerpo] = useState('');
-  const [id_usuario, setIdUsuario] = useState('');
   const [imagen, setImagen] = useState('');
+  const [id_usuario, setIdUsuario] = useState('');
 
+  const path = window.location.pathname;
+  const Id = obtIdDesdePath(path);
+
+  useEffect(() => {
+    const fetchArticulo = async () => {
+      try {
+        const articulo = await getArticulo(Id); // Utiliza la función para obtener los detalles del artículo
+        setTitulo(articulo.titulo);
+        setCuerpo(articulo.cuerpo);
+        setImagen(articulo.imagen);
+        setIdUsuario(articulo.id_usuario);
+      } catch (error) {
+        console.error('Error al obtener el artículo:', error);
+      }
+    };
+
+    fetchArticulo();
+  }, [Id]);
 
   const handleGuardarClick = async () => {
     try {
-      await editArticulo(titulo, cuerpo, imagen, id_usuario); // Utiliza la función importada
+      await editArticulo(titulo, cuerpo, imagen, id_usuario, Id); // Utiliza la función de edición y pasa el ID
       console.log('Artículo guardado con éxito');
     } catch (error) {
       console.error('Error al guardar el artículo:', error);
@@ -41,4 +61,4 @@ const ArticulosForm = () => {
   );
 };
 
-export default ArticulosForm;
+export default EditArticulo;

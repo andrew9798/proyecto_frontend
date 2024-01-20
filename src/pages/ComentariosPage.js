@@ -25,7 +25,7 @@ const Articulos = () => {
   }, []); // El segundo parámetro [] asegura que useEffect solo se ejecute una vez al montar el componente
 
   return (
-    <Container className="container" fluid>
+    <Container  fluid>
       <NavigationBar />
       {comentario &&
         Array.isArray(comentario) &&

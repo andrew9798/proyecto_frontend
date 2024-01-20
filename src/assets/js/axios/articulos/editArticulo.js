@@ -1,16 +1,16 @@
 import axios from 'axios';
 import { URL } from "../../utils"
 
-export const postArticulo = async (titulo, cuerpo, imagen, id_usuario, articuloId) => {
+export const editArticulo = async (titulo, cuerpo, imagen, id_usuario, articuloId) => {
   try {
-    const response = await axios.patch(`${URL}${articuloId}`, {
+    const response = await axios.patch(`${URL}/articulos/${articuloId}`, {
       titulo: titulo,
       cuerpo: cuerpo,
       id_usuario: id_usuario,
       imagen: imagen
     });
 
-    console.log('Artículo guardado:', response.data);
+    console.log('Artículo editado:', response.data);
 
     return response.data;
   } catch (error) {

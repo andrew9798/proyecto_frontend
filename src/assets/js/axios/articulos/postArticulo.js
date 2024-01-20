@@ -8,7 +8,7 @@ export const postArticulo = async (titulo, cuerpo, imagen, id_usuario) => {
       cuerpo: cuerpo,
       id_usuario: id_usuario,
       imagen: imagen
-    });
+    }, { withCredentials: true, crossDomain: true });
 
     console.log('Artículo guardado:', response.data);
 

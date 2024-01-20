@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Container, Button } from 'react-bootstrap';
 import { getArticulos } from '../assets/js/axios/articulos/getArticulos'; // Ruta de getArticulos
 import CardHorizontal from "../components/CardHorizontal"
+import CardArticulo from '../components/CardArticulo';
 import NavigationBar from "../components/NavigationBar"
 import Footer from "../components/Footer";
-import { Link } from 'react-router-dom';
 import '../assets/css/styles.css'
 
 const Articulos = () => {
@@ -25,20 +25,16 @@ const Articulos = () => {
     }, []); // El segundo parámetro [] asegura que useEffect solo se ejecute una vez al montar el componente
 
     return (
-        <Container className="container" fluid>
+        <Container fluid>
             <NavigationBar />
             {itemsCard.map((date) => (
-                <CardHorizontal
+                <CardArticulo
                     id={date._id}
                     image={date.imagen}
                     title={date.titulo}
                     text={date.cuerpo}                                 
                 />
             ))}
-
-        <Button variant="primary"> <Link to={`/articulos/nuevoArticulo}`}>Saber más</Link></Button>
-        <Button variant="primary"> <Link to={`/articulos/editArticulo}`}>Saber más</Link></Button>
-
 
             <Footer />
         </Container>

@@ -37,6 +37,7 @@ function Inicio() {
           title={aboutMe.title}
           text={aboutMe.text}
       />
+      
       <Footer />
     </Container>
   );

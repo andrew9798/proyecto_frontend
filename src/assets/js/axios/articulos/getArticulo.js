@@ -4,7 +4,7 @@ import { URL } from "../../utils"
 export const getArticulo = async (articuloId) => {
   try {
     const respuesta = await axios.get(
-      `${URL}${articuloId}`
+      `${URL}/articulos/${articuloId}`
     );
     return respuesta.data;
   } catch (error) {

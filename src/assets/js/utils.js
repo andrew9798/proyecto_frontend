@@ -10,4 +10,4 @@ export const URL = "http://localhost:3500/api/v1";
 
 export const UrlFront = "http://localhost:3000";
 
-export const funcionalidades = [ "articulos", "comentarios", "usuarios", "proyectos" ];
+export const funcionalidades = [ "articulos", "comentarios", "usuarios"];

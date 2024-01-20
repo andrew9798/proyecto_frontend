@@ -1,44 +1,29 @@
-import React, { useState } from 'react';
-import { postArticulo } from '../assets/js/axios/articulos/postArticulo'; // Importa la función desde el nuevo archivo
+import React from 'react';
+import { postArticulo } from '../assets/js/axios/articulos/postArticulo';
+import GenericForm from '../components/GenericPost';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
-const ArticulosForm = () => {
-  const [titulo, setTitulo] = useState('');
-  const [cuerpo, setCuerpo] = useState('');
-  const [id_usuario, setIdUsuario] = useState('');
-  const [imagen, setImagen] = useState('');
+const NuevoArticulo = () => {
+  const navigate = useNavigate(); // Obtiene la función de navegación
 
+  const fields = [
+    { name: 'titulo', label: 'Título' },
+    { name: 'cuerpo', label: 'Cuerpo', type: 'textarea' },
+    { name: 'imagen', label: 'URL de la Imagen' },
+    { name: 'id_usuario', label: 'ID Usuario' },
+  ];
 
-  const handleGuardarClick = async () => {
+  const handleArticuloSubmit = async (data) => {
     try {
-      await postArticulo(titulo, cuerpo, imagen, id_usuario); // Utiliza la función importada
+      await postArticulo(data.titulo, data.cuerpo, data.imagen, data.id_usuario);
       console.log('Artículo guardado con éxito');
+      navigate('/articulos'); // Redirige a la página de /articulos
     } catch (error) {
       console.error('Error al guardar el artículo:', error);
     }
   };
 
-  return (
-    <div>
-      <h2>Formulario de Artículo</h2>
-      <div className="mb-3">
-        <label htmlFor="titulo" className="form-label">Título</label>
-        <input type="text" className="form-control" id="titulo" value={titulo} onChange={(e) => setTitulo(e.target.value)} />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="cuerpo" className="form-label">Cuerpo</label>
-        <textarea className="form-control" id="cuerpo" rows="3" value={cuerpo} onChange={(e) => setCuerpo(e.target.value)}></textarea>
-      </div>
-      <div className="mb-3">
-        <label htmlFor="imagen" className="form-label">URL de la Imagen</label>
-        <input type="text" className="form-control" id="imagen" value={imagen} onChange={(e) => setImagen(e.target.value)} />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="id_usuario" className="form-label">ID Usuario</label>
-        <input type="text" className="form-control" id="id_usuario" value={id_usuario} onChange={(e) => setIdUsuario(e.target.value)} />
-      </div>
-      <button type="button" className="btn btn-primary" onClick={handleGuardarClick}>Guardar Artículo</button>
-    </div>
-  );
+  return <GenericForm fields={fields} onSubmit={handleArticuloSubmit} />;
 };
 
-export default ArticulosForm;
+export default NuevoArticulo;

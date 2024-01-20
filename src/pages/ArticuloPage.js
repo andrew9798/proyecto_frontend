@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import { getArticulo } from "../assets/js/axios/articulos/getArticulo"; // Ruta de getArticulo
 import { getComentariosByArticulo } from "../assets/js/axios/comentarios/getComentariosByArticulo";
 import { obtIdDesdePath } from "../assets/js/utils";
+import { Link } from 'react-router-dom';
 import CardHorizontal from "../components/CardHorizontal";
 import CardComentario from "../components/CardComentario";
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
+import NuevoComentario from "./NuevoComentario";
 
 const Articulos = () => {
   const [articulo, setArticulo] = useState(null);
@@ -18,7 +20,7 @@ const Articulos = () => {
   useEffect(() => {
     const fetchDataArticulo = async () => {
       try {
-        const data = await getArticulo(pathArticuloId);
+        const data = await getArticulo(articuloId);
         setArticulo(data); // Actualiza el estado con los datos de la API
         console.log(data);
       } catch (error) {
@@ -55,7 +57,7 @@ const Articulos = () => {
   // }, [articuloId]);
 
   return (
-    <Container className="container" fluid>
+    <Container fluid>
       <NavigationBar />
       {articulo && (
         <CardHorizontal
@@ -65,6 +67,11 @@ const Articulos = () => {
           text={articulo.cuerpo}
         />
       )}
+      {
+        <div className="cajaComentario">
+          <NuevoComentario id={articuloId} />
+        </div>
+      }
       {comentario &&
         Array.isArray(comentario) &&
         comentario.map((date) => (

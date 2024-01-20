@@ -19,7 +19,7 @@ function NavigationBar() {
             <Nav.Link href="/proyectos">Proyectos</Nav.Link>
             <Nav.Link href="/articulos">Artículos</Nav.Link>
             <Nav.Link href="/contacto">Contacto</Nav.Link>
-            <Nav.Link href="/inicio-sesion">Iniciar Sesion</Nav.Link>
+            <Nav.Link href="/login">Iniciar Sesion</Nav.Link>
             <Nav.Link href="/administracionPanel">Panel Administrador</Nav.Link>
           </Nav>
           <Button variant="outline-light" onClick={handleOffcanvasShow}>
