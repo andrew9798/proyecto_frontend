@@ -23,7 +23,7 @@ const CardComentario = ({ title, text, name, id }) => {
             <Card.Text>{text}</Card.Text>
             <Card.Text>{name}</Card.Text>
             <Button variant="warning custom-link-button boton" onClick={handleEliminarComentario}>
-              <Link to={`/articulos/${id}`}>Eliminar Comentario</Link>
+              <Link to={`/administracionPanel/comentarios`}>Eliminar Comentario</Link>
             </Button>
             <Button variant="secondary custom-link-button boton">
             <Link to={`/editComentario/${id}`}>Editar Comentario</Link>

@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import {  Button, Container } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import { getArticulo } from '../assets/js/axios/articulos/getArticulo';
 import { editArticulo} from "../assets/js/axios/articulos/editArticulo";
 import { obtIdDesdePath } from '../assets/js/utils';
+import { useNavigate } from 'react-router-dom';
+import NavigationBar from '../components/NavigationBar';
+import Footer from '../components/Footer';
+
 
 const EditArticulo = () => {
   const [titulo, setTitulo] = useState('');
@@ -11,6 +17,7 @@ const EditArticulo = () => {
 
   const path = window.location.pathname;
   const Id = obtIdDesdePath(path);
+  const navigate = useNavigate(); // Importa useNavigate directamente desde 'react-router-dom'
 
   useEffect(() => {
     const fetchArticulo = async () => {
@@ -32,13 +39,17 @@ const EditArticulo = () => {
     try {
       await editArticulo(titulo, cuerpo, imagen, id_usuario, Id); // Utiliza la función de edición y pasa el ID
       console.log('Artículo guardado con éxito');
+            // Redirigir después de editar
+            navigate('/administracionPanel/articulos');
     } catch (error) {
       console.error('Error al guardar el artículo:', error);
     }
   };
 
   return (
-    <div>
+    <Container fluid>
+      <NavigationBar />
+      <div className='formulario'>
       <h2>Editar el Artículo</h2>
       <div className="mb-3">
         <label htmlFor="titulo" className="form-label">Título</label>
@@ -56,8 +67,17 @@ const EditArticulo = () => {
         <label htmlFor="id_usuario" className="form-label">ID Usuario</label>
         <input type="text" className="form-control" id="id_usuario" value={id_usuario} onChange={(e) => setIdUsuario(e.target.value)} />
       </div>
-      <button type="button" className="btn btn-primary" onClick={handleGuardarClick}>Guardar Artículo</button>
+      <div>
+        <Button variant="warning custom-link-button boton" onClick={handleGuardarClick}>
+              <Link to={`/administracionPanel/articulos`}>Eliminar Articulo</Link>
+        </Button>
+        <Button variant="primary" className="custom-link-button boton"> <Link to={`/administracionPanel/articulos`}>volver</Link></Button>
+      </div>
+
     </div>
+    <Footer />
+    </Container>
+  
   );
 };
 

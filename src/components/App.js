@@ -13,6 +13,8 @@ import AdministracionPanel from "../pages/AdministracionPanel"
 import AdministracionPage from "../pages/AdministracionPage"
 import LoginPage from '../pages/loginPage'
 import EditArticulo from "../pages/EditArticulo"
+import EditComentario from '../pages/EditComentario'
+import EditUsuario from '../pages/EditUsuario'
 import RegistroPage from '../pages/RegistroPage'
 
 const App = () => (
@@ -28,6 +30,8 @@ const App = () => (
             <Route exact path="/editArticulo/:id" element={<EditArticulo />} />
             <Route exact path="/articulos/:id" element={<ArticuloPage />} />
             <Route exact path="/comentarios" element={<Comentarios />} />
+            <Route exact path="/editComentario/:id" element={<EditComentario />} />
+            <Route exact path="/editUsuario/:id" element={<EditUsuario />} />
             <Route exact path="/administracionPanel" element={<AdministracionPanel />} />
             <Route exact path="/administracionPanel/articulos" element={<AdministracionPage />} />
             <Route exact path="/administracionPanel/comentarios" element={<AdministracionPage />} /> 

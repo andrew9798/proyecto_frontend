@@ -23,12 +23,12 @@ const CardUsuario = ({ nombre, correo, nivel, id }) => {
         <div className="col-md-8">
           <Card.Body>
             <Card.Title>{nombre}</Card.Title>
-            <Card.Text>{correo}</Card.Text>
+            <Card.Text>{correo}</Card.Text> 
   
             {nivel === 1 && <Card.Text>Es administrador</Card.Text>}
             {nivel === 2 && <Card.Text>Es usuario</Card.Text>}
             <Button variant="warning custom-link-button boton" onClick={handleEliminarUsuario}>
-              Eliminar Usuario
+            <Link to={`/administracionPanel/usuarios`}>Eliminar Usuario</Link>
             </Button>
             <Button variant="secondary custom-link-button boton">
               <Link to={`/editUsuario/${id}`}>Editar Usuario</Link>

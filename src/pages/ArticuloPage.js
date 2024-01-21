@@ -33,6 +33,7 @@ const Articulos = () => {
         const data = await getComentariosByArticulo(articuloId);
         setComentario(data); // Actualiza el estado con los datos de la API
         console.log(data);
+        console.log(comentario);
       } catch (error) {
         // Manejar el error según sea necesario
       }
@@ -68,7 +69,8 @@ const Articulos = () => {
         />
       )}
       {
-        <div className="cajaComentario">
+        <div className="formulario cajaComentarios">
+          <h3>Añade un nuevo comentario</h3>
           <NuevoComentario id={articuloId} />
         </div>
       }

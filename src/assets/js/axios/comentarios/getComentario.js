@@ -1,11 +1,10 @@
 import axios from "axios";
 import { URL } from "../../utils"
 
-export const getComentariosByArticulo = async (articuloId) => {
+export const getComentario = async (comentarioId) => {
   try {
-    console.log(articuloId)
     const respuesta = await axios.get(
-      `${URL}/comentarios/articulo/${articuloId}`
+      `${URL}/comentarios/${comentarioId}`
     );
     return respuesta.data;
   } catch (error) {
@@ -13,4 +12,3 @@ export const getComentariosByArticulo = async (articuloId) => {
     throw error;
   }
 };
-

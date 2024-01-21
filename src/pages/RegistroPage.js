@@ -5,6 +5,7 @@ import "../assets/css/formulario.css";
 import { postUsuarios } from "../assets/js/axios/usuarios/postUsuario"; // Importa la función desde el nuevo archivo
 import NavigationBar from "../components/NavigationBar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const ProfilePorDefecto = 2   //Por defecto el usuario tendrá el perfil de usuario.
 
@@ -66,6 +67,10 @@ const RegistroPage = () => {
     try {
       await postUsuarios(usuario, correo, contrasenya, ProfilePorDefecto); // Utiliza la función importada
       console.log("Usuario creado con éxito");
+
+      // Redirección después de que el usuario se haya creado con éxito
+      // Puedes ajustar la ruta de redirección según tus necesidades
+      window.location.href = "/";
     } catch (error) {
       console.error("Error al crear el usuario:", error);
     }
